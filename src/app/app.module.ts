@@ -4,14 +4,15 @@ import {HttpModule} from '@angular/http';
 
 import { RouterModule } from "@angular/router";
 import { AppComponent } from './app.component';
-import {FilterComponent} from './index';
-import {DataService} from './shared/data.service';
+import {FilterComponent,ChannelListComponent} from './index';
+import {DataService} from './shared/index';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FilterComponent,
+    ChannelListComponent
     
   ],
   imports: [
