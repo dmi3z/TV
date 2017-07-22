@@ -1,5 +1,5 @@
-<h2 style="color:aqua">This is te main component</h2>
-<filter-component></filter-component>
-<channel-list></channel-list>
+<h2 style="color:aqua">This is the main component</h2>
+
+<channel-list *ngFor="let channel of channels" [channel]="channel"></channel-list>
 
 
