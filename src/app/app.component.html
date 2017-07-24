@@ -1,5 +1,5 @@
-<h2 style="color:aqua">This is the main component</h2>
+<h2><img src="favicon.ico"/> TV show list for Persik.by</h2>
 
-<channel-list *ngFor="let channel of channels" [channel]="channel" [tvshows]="tvshows"></channel-list>
-
-
+<filter-component (childChanged)="doSort($event)">Loading...</filter-component>
+  
+<channel-list *ngFor="let channel of channels" [channel]="channel" [tvshows]="tvshows">Loading...</channel-list>

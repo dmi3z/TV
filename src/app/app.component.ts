@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component,Input} from '@angular/core';
 import {DataService,Channel,TvShows} from './shared/index';
+import {} from '';
 import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'  
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent  {
@@ -28,9 +29,25 @@ export class AppComponent  {
         this.dataService.getTvShowsList().subscribe(
          data=>this.tvshows_temp=data,
          error=>error,
-         ()=>this.tvshows=this.tvshows_temp); 
-                     
+         ()=>this.tvshows=this.tvshows_temp);                      
     }
- 
-  
+
+    doSort(value){ 
+
+      if(value==1){
+        this.channels.sort(function(a,b){
+        return a.id-b.id;
+      });
+    }  
+    if(value==2) {
+        this.channels.sort(function (a, b) {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+         return 0;});
+      }   
+    } 
 }
